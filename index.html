@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        *{
+            margin: 0;
+            background-color: lightgray;
+            font-family: verdana;
+            padding: 0;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        #my{
+            width: 100%;
+            margin-left: 45%;
+            margin-top: 10rem;
+        }
+        #my button{
+            background-color: lightgreen;
+            color: black;
+            width: 70px;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="my">
+        <h1>To do list</h1>
+        <br>
+        <input type="text" name="array[]">
+        <button onclick="add_todo()">Add</button>
+        <br><br>
+    </div>
+    <script>
+        function add_todo(){
+            let input = document.getElementsByName("array[]");
+            let k = "";
+            for(let i=0 ; i<input.length ; i++){
+                let a = input[i];
+                k = k + a.value + "<br>";
+            }
+            document.getElementById("my").innerHTML += k;
+        }
+    </script>
+</body>
+</html>
